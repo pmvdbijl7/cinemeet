@@ -1,0 +1,29 @@
+{
+  "name": "matching-app",
+  "version": "1.0.0",
+  "description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js",
+    "serve": "node index.js",
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmvdbijl7/matching-app.git"
+  },
+  "author": "Patrick van der Bijl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmvdbijl7/matching-app/issues"
+  },
+  "homepage": "https://github.com/pmvdbijl7/matching-app#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
