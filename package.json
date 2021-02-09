@@ -4,10 +4,10 @@
   "description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js",
-    "start": "node index.js",
-    "serve": "node index.js",
-    "build": "node index.js"
+    "test": "nodemon index.js",
+    "start": "nodemon index.js",
+    "serve": "nodemon index.js",
+    "build": "nodemon index.js"
   },
   "repository": {
     "type": "git",
