@@ -4,10 +4,10 @@
   "description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
-    "start": "nodemon index.js",
-    "serve": "nodemon index.js",
-    "build": "nodemon index.js"
+    "test": "node app.js",
+    "start": "node app.js",
+    "serve": "node app.js",
+    "build": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   "homepage": "https://github.com/pmvdbijl7/matching-app#readme",
   "dependencies": {
     "camelcase": "^6.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
     "lodash": "^4.17.20"
   },
   "devDependencies": {
