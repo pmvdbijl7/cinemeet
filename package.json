@@ -7,7 +7,8 @@
     "test": "node app.js",
     "start": "node app.js",
     "serve": "node app.js",
-    "build": "node app.js"
+    "build": "node app.js",
+    "sass:compile": "sass public/scss/main.scss:public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.7"
   }
 }
