@@ -2,12 +2,12 @@
   "name": "matching-app",
   "version": "1.0.0",
   "description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "start": "node app.js",
-    "serve": "node app.js",
-    "build": "node app.js",
+    "test": "nodemon app.js",
+    "start": "nodemon app.js",
+    "serve": "nodemon app.js",
+    "build": "nodemon app.js",
     "sass:compile": "sass public/scss/main.scss:public/css/style.css"
   },
   "repository": {
