@@ -28,7 +28,7 @@ This is a project I am currently working on for school in year 2, semester 2 of 
 
 
 ## Usage
-To clone and run this application, you need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/) (which comes with [npm](https://www.npmjs.com/)) installed on you rcomputer. From your command line:
+To clone and run this application, you need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/) (which comes with [npm](https://www.npmjs.com/)) installed on your computer. From your command line:
 
 ```bash
     # Clone this repository
