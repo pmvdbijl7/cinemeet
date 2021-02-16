@@ -41,7 +41,7 @@ To clone and run this application, you need [Git](https://git-scm.com/) and [Nod
     $ npm install
 
     # Run the app
-    $ npm start
+    $ npm run start
 ```
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
@@ -60,6 +60,7 @@ This project uses the following open source packages:
 + [Nodemon](https://nodemon.io/)
 + [Express](http://expressjs.com/)
 + [Handlebars](https://handlebarsjs.com/)
++ [Sass](https://sass-lang.com/)
 
 ## License
 Matching app is released under the [MIT](https://github.com/pmvdbijl7/matching-app/blob/main/LICENSE) License.
