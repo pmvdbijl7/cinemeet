@@ -60,6 +60,7 @@ This project uses the following open source packages:
 + [Nodemon](https://nodemon.io/)
 + [Express](http://expressjs.com/)
 + [Handlebars](https://handlebarsjs.com/)
++ [Sass](https://sass-lang.com/)
 
 ## License
 Matching app is released under the [MIT](https://github.com/pmvdbijl7/matching-app/blob/main/LICENSE) License.
