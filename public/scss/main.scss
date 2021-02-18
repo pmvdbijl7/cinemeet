@@ -1,19 +1,103 @@
-* {
-    margin: 0;
-    padding: 0;
+// Color variables
+$primary-color: #7f5af0;
+$secondary-color: #2cb67d;
+$title-color: #fffffe;
+$text-color: #94a1b2;
+$background-color: #16161a;
+$sub-background-color: #242629;
+$white: #fffffe;
+$black: #16161a;
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
 }
 
 body {
-    
+    font-family: 'Open Sans', sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $title-color;
+}
+
+section {
+    padding: 0 25px;
+}
+
+header {
+    height: 70px;
+    padding: 0 25px;
+    border-bottom: 1px solid $sub-background-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        button {
+            position: relative;
+            width: 20px;
+            height: 30px;
+            cursor: pointer;
+            appearance: none;
+            border: none;
+            outline: none;
+            background-color: transparent;
+
+            span {
+                position: absolute;
+                height: 2px;
+                left: 0;
+                right: 0;
+                background-color: $white;
+                border-radius: 4px;
+
+                &:first-of-type {
+                    transform: translateY(-5px);
+                }
+
+                &:last-of-type {
+                    transform: translateY(5px);
+                }
+            }
+        }
+
+        ul {
+            position: absolute;
+            display: none;
+            width: 80%;
+            height: 100%;
+            list-style: none;
+            background-color: $sub-background-color;
+            // transform: translateX(-100%);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            transition: .3s ease-in;
+
+            &.open-menu {
+                display: block;
+                transform: translateY(0%);
+            }
+        }
+    }
+
     h1 {
-        color: blue;
+        font-size: 16px;
+        font-weight: 600;
     }
 
-    p {
-        color: green;
-    }
+    a:last-of-type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    li {
-        list-style: none;
+        img {
+            width: 20px;
+            height: 20px;
+            color: $white;
+        }
     }
 }

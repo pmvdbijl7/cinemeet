@@ -1,16 +1,84 @@
-* {
+*, *::after, *::before {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body h1 {
-  color: blue;
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #16161a;
+  color: #94a1b2;
 }
-body p {
-  color: green;
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fffffe;
 }
-body li {
+
+section {
+  padding: 0 25px;
+}
+
+header {
+  height: 70px;
+  padding: 0 25px;
+  border-bottom: 1px solid #242629;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav button {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header nav button span {
+  position: absolute;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background-color: #fffffe;
+  border-radius: 4px;
+}
+header nav button span:first-of-type {
+  transform: translateY(-5px);
+}
+header nav button span:last-of-type {
+  transform: translateY(5px);
+}
+header nav ul {
+  position: absolute;
+  display: none;
+  width: 80%;
+  height: 100%;
   list-style: none;
+  background-color: #242629;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease-in;
+}
+header nav ul.open-menu {
+  display: block;
+  transform: translateY(0%);
+}
+header h1 {
+  font-size: 16px;
+  font-weight: 600;
+}
+header a:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header a:last-of-type img {
+  width: 20px;
+  height: 20px;
+  color: #fffffe;
 }
 
 /*# sourceMappingURL=style.css.map */
