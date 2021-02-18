@@ -1,23 +1,28 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-const exphbs = require('express-handlebars');
+const hbs = require('express-handlebars');
 
 // Some test data
 const data = { person: { firstname: "Patrick", lastname: "van der Bijl" }, age: 20, favorite: { movie: "Shooter", series: "Prison Break" } }
 
 // Set express to use handlebars
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.engine('hbs', hbs( {
+    extname: 'hbs',
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+}));
+app.set('view engine', 'hbs');
 
 // Set views directory as the directory where the template files are located
-app.set('views', './views');
+// app.set('views', './views');
 
 // Serve public directory as a static directory
 app.use(express.static('public'));
 
 // Set routes
-app.get('/', (req, res) => { res.render('index') });
+app.get('/', (req, res) => { res.redirect('/profile') });
 app.get('/profile', (req, res) => { res.render('profile', data) });
 
 // Show 404 page if page doesn't exist
