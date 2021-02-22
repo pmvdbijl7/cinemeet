@@ -1,0 +1,40 @@
+<section>
+    <form action="" method="POST" class="edit-profile">
+        <div class="form-group">
+            <label for="avatar">
+                <img src="media/images/avatar_default.jpg" alt="Profile picture">
+            </label>
+            <input type="file" name="avatar" id="avatar">
+        </div>
+
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+
+            <input type="text" name="fullname" id="fullname" value="{{ fullname }}">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+
+            <textarea name="description" id="description">{{ description }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+
+            <input type="text" name="username" id="username" value="{{ username }}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+
+            <input type="email" name="email" id="email" value="{{ email }}">
+        </div>
+
+        <div class="form-group">
+            <button type="submit">
+                Save Changes
+            </button>
+        </div>
+    </form>
+</section>
