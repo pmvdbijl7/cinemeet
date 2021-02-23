@@ -1,12 +1,4 @@
-// Color variables
-$primary-color: #7f5af0;
-$secondary-color: #2cb67d;
-$title-color: #fffffe;
-$text-color: #94a1b2;
-$background-color: #16161a;
-$sub-background-color: #242629;
-$white: #fffffe;
-$black: #16161a;
+@import "./variables.scss";
 
 *, *::after, *::before {
     box-sizing: border-box;
@@ -43,8 +35,8 @@ section {
         padding: 0 20px;
         border: 1px solid $sub-background-color;
         border-radius: 8px;
-        background-color: $background-color;
-        color: $white;
+        background-color: transparent;
+        color: $black;
         outline: none;
     }
 
@@ -55,8 +47,8 @@ section {
         padding: 10px 20px;
         border: 1px solid $sub-background-color;
         border-radius: 8px;
-        background-color: $background-color;
-        color: $white;
+        background-color: transparent;
+        color: $black;
         font-family: 'Open Sans', sans-serif;
         outline: none;
     }
@@ -98,7 +90,7 @@ header {
                 height: 2px;
                 left: 0;
                 right: 0;
-                background-color: $white;
+                background-color: $black;
                 border-radius: 4px;
 
                 &:first-of-type {
@@ -141,10 +133,10 @@ header {
         justify-content: center;
         align-items: center;
 
-        img {
+        svg {
             width: 20px;
             height: 20px;
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -163,14 +155,16 @@ form.edit-profile {
             &::before {
                 position: absolute;
                 right: -7px;
-                content: "5";
-                font-size: 14px;
+                content: "\270F";
+                font-size: 13px;
                 font-weight: 800;
                 width: 25px;
                 height: 25px;
                 background-color: $primary-color;
+                color: $white;
                 border: 2px solid $background-color;
                 border-radius: 50%;
+                transform: rotate(135deg);
             }
         }
 
@@ -185,3 +179,5 @@ form.edit-profile {
         }
     }
 }
+
+@import "./dark-theme.scss";
