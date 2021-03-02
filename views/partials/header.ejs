@@ -1,0 +1,34 @@
+<nav>
+	<button aria-label="Open and close menu">
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<ul>
+		<div class="head">
+			<svg>
+				<use xlink:href="media/images/close.svg#close"></use>
+			</svg>
+
+			<img src="media/images/logo.png" alt="Cinemeet logo" />
+		</div>
+		<li><a href="/">Home</a></li>
+		<li><a href="/discover">Discover</a></li>
+		<li><a href="/movies">Movies</a></li>
+		<li><a href="/series">Series</a></li>
+		<li><a href="/bookmarks">Bookmarks</a></li>
+		<li><a href="/settings">Settings</a></li>
+		<li><a href="/logout">Logout</a></li>
+	</ul>
+</nav>
+
+<a href="/">
+	<img src="media/images/logo.png" alt="Cinemeet logo" />
+</a>
+
+<a href="/<%= user.username %>">
+	<svg>
+		<use xlink:href="media/images/profile_default.svg#profile"></use>
+	</svg>
+</a>

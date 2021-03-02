@@ -6,7 +6,7 @@ require('dotenv/config');
 
 // Register Controllers
 const register_get = (req, res) => {
-	res.render('auth/register', { layout: 'auth', title: 'Sign Up' });
+	res.render('pages/auth/register', { layout: 'auth', title: 'Sign Up' });
 };
 
 const register_post = async (req, res) => {
@@ -44,7 +44,7 @@ const register_post = async (req, res) => {
 
 // login Controllers
 const login_get = (req, res) => {
-	res.render('auth/login', { layout: 'auth', title: 'Sign In' });
+	res.render('pages/auth/login', { layout: 'auth', title: 'Sign In' });
 };
 
 const login_post = async (req, res) => {

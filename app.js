@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
@@ -25,16 +24,7 @@ const authRoutes = require('./routes/authRoutes.js');
 const profileRoutes = require('./routes/profileRoutes.js');
 
 // Setup Templating Engine
-app.engine(
-	'hbs',
-	hbs({
-		extname: 'hbs',
-		defaultLayout: 'main',
-		layoutsDir: __dirname + '/views/layouts/',
-		partialsDir: __dirname + '/views/partials/',
-	})
-);
-app.set('view engine', 'hbs');
+app.set('view engine', 'ejs');
 
 // Setup Public Directory as a Static Directory
 app.use(express.static('public'));
@@ -47,7 +37,7 @@ app.use(cookieParser());
 // Connect to Database
 mongoose.connect(
 	dbConnection,
-	{ useNewUrlParser: true, useUnifiedTopology: true },
+	{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
 	() => {
 		console.log('Succesfully Connected to Database!');
 	}

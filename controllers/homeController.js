@@ -7,7 +7,7 @@ const home_get = (req, res) => {
 
 	// Get User Data
 	User.findById(id).then((result) => {
-		res.render('home', {
+		res.render('pages/index', {
 			title: 'Home',
 			user: result.toJSON(),
 		});
