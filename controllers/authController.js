@@ -60,17 +60,10 @@ const login_post = async (req, res) => {
 	const validPass = await bcrypt.compare(req.body.password, user.password);
 	if (!validPass) return res.status(400).send('Your password is wrong.');
 
-	try {
-		// Create accessToken and Assign to Cookie
-		const accessToken = jwt.sign(
-			{ _id: user._id },
-			process.env.TOKEN_SECRET
-		);
-		res.cookie('accessToken', accessToken);
-		res.redirect('/');
-	} catch (err) {
-		res.status(503).send('Serivce Unavailable');
-	}
+	// Create accessToken and Assign to Cookie
+	const accessToken = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+	res.cookie('accessToken', accessToken);
+	res.redirect('/');
 };
 
 // Logout Controller
