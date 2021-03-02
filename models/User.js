@@ -1,0 +1,41 @@
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+
+const userSchema = new mongoose.Schema(
+	{
+		username: {
+			type: String,
+			minLength: 2,
+			maxLength: 255,
+			required: true,
+			unique: true,
+			uniqueCaseInsensitive: true,
+		},
+		email: {
+			type: String,
+			maxLength: 255,
+			required: true,
+			unique: true,
+			uniqueCaseInsensitive: true,
+		},
+		password: {
+			type: String,
+			minLength: 8,
+			maxLength: 1024,
+			required: true,
+		},
+		name: {
+			type: String,
+			minLength: 2,
+			maxLength: 255,
+		},
+		description: {
+			type: String,
+			maxLength: 512,
+		},
+	},
+	{ timestamps: true }
+);
+
+userSchema.plugin(uniqueValidator);
+module.exports = mongoose.model('User', userSchema);

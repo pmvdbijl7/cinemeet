@@ -1,56 +1,71 @@
 const express = require('express');
 const app = express();
-const port = 8000;
 const hbs = require('express-handlebars');
-const slug = require('slug');
-// const bodyParser = require('body-parser');
-const multer = require('multer');
-const upload = multer({ dest: 'public/upload/' });
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+require('dotenv/config');
+const verify = require('./controllers/verifyAccessToken');
+const homeController = require('./controllers/homeController');
 
-// Some test data
-const data = [{ id: 1, fullname: "John Doe", description: "I'm a big fan of Marvel movies :)", username: "john.doe", email: "john.doe@gmail.com" }];
+// Get .env Variables
+const hostURL = process.env.HOST_URL;
+const hostPort = process.env.HOST_PORT;
+const dbConnection =
+	'mongodb+srv://' +
+	process.env.DB_USERNAME +
+	':' +
+	process.env.DB_PASSWORD +
+	'@gettingstarted.35frc.mongodb.net/' +
+	process.env.DB_NAME +
+	'?retryWrites=true&w=majority';
 
-// Set express to use handlebars
-app.engine('hbs', hbs( {
-    extname: 'hbs',
-    defaultLayout: 'main',
-    layoutsDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/'
-}));
+// Import Routes
+const authRoutes = require('./routes/authRoutes.js');
+const profileRoutes = require('./routes/profileRoutes.js');
+
+// Setup Templating Engine
+app.engine(
+	'hbs',
+	hbs({
+		extname: 'hbs',
+		defaultLayout: 'main',
+		layoutsDir: __dirname + '/views/layouts/',
+		partialsDir: __dirname + '/views/partials/',
+	})
+);
 app.set('view engine', 'hbs');
 
-// Set views directory as the directory where the template files are located
-// app.set('views', './views');
-
-// Serve public directory as a static directory
+// Setup Public Directory as a Static Directory
 app.use(express.static('public'));
 
-// Set routes
-// app.get('/', (req, res) => { res.redirect('/profile') }); // Redirect to /profile, as we only create a feature for the profile page
-// app.get('/profile', (req, res) => { res.render('edit_profile', data) });
+// Middleware(s)
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
-function add(req, res) {
-    console.log(req.body)
+// Connect to Database
+mongoose.connect(
+	dbConnection,
+	{ useNewUrlParser: true, useUnifiedTopology: true },
+	() => {
+		console.log('Succesfully Connected to Database!');
+	}
+);
 
-    const id = req.body.username.toLowerCase();
+// Get Home Page
+app.get('/', verify, homeController.home_get);
 
-    res.redirect('/' + id);
-}
+// Route Middlewares
+app.use(authRoutes);
+app.use(profileRoutes);
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.get('/', (req, res) => { res.render('edit_profile', data) });
-app.post('/', upload.single('avatar'), add);
-app.get('/:id', (req, res) => { res.render('profile', { output: req.params.id } ) });
-
-// app.use(bodyParser.urlencoded({ extended: true })).get('/profile', form).post('/', upload.single('avatar'), add);
-
-// Show 404 page if page doesn't exist
+// Show 404 Page if Page Doesn't Exists
 app.use((req, res, next) => {
-    res.status(404).send("This page doesn't exist!")
+	res.status(404).send('This page does not exist!');
 });
 
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
+// Start Server at Given Host and Port
+app.listen(hostPort, () => {
+	console.log(`App Listening at ${hostURL}:${hostPort}`);
 });
