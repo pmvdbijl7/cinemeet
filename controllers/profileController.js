@@ -18,4 +18,19 @@ const user_get = (req, res) => {
 	});
 };
 
-module.exports = { user_get };
+const user_edit_get = (req, res) => {
+	const authUser = req.user._id;
+
+	User.findById(authUser).then((result) => {
+		res.render('pages/profile/edit', {
+			title: 'Edit profile',
+			user: result.toJSON(),
+		});
+	});
+};
+
+const user_edit_post = (req, res) => {
+	console.log(req.body);
+};
+
+module.exports = { user_get, user_edit_get, user_edit_post };

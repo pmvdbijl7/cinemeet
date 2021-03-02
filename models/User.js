@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema(
 			minLength: 2,
 			maxLength: 255,
 		},
-		description: {
+		biography: {
 			type: String,
 			maxLength: 512,
 		},

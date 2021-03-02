@@ -13,7 +13,7 @@
                 <h4>Username: <%= user.username %></h2>
                 <h4>Email address: <%= user.email %></h2>
                 <% if(user._id == authUser) { %>
-                    <p>Hij doet het</p>
+                    <a href="/<%= user.username %>/edit">Edit profile</a>
                 <% } %>
             </section>
 		</main>
