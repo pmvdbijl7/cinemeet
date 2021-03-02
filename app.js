@@ -62,8 +62,7 @@ app.use(profileRoutes);
 
 // Show 404 Page if Page Doesn't Exists
 app.use((req, res, next) => {
-	const statusCode = 503;
-	res.status(statusCode >= 100 && statusCode < 600 ? err.code : 500);
+	res.status(404).send('This page does not exist!');
 });
 
 // Start Server at Given Host and Port
