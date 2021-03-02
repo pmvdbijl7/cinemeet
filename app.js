@@ -9,8 +9,8 @@ const verify = require('./controllers/verifyAccessToken');
 const homeController = require('./controllers/homeController');
 
 // Get .env Variables
-const hostURL = process.env.HOST_URL;
-const hostPort = process.env.HOST_PORT;
+const hostURL = process.env.URL;
+const hostPort = process.env.PORT || 8000;
 const dbConnection =
 	'mongodb+srv://' +
 	process.env.DB_USERNAME +
