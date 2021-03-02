@@ -1,44 +1,44 @@
 {
-  "name": "matching-app",
-  "version": "1.0.0",
-  "description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
-  "main": "app.js",
-  "scripts": {
-    "test": "nodemon app.js",
-    "start": "nodemon app.js",
-    "serve": "nodemon app.js",
-    "build": "nodemon app.js",
-    "sass:compile": "sass public/scss/main.scss:public/css/style.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pmvdbijl7/matching-app.git"
-  },
-  "author": "Patrick van der Bijl",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pmvdbijl7/matching-app/issues"
-  },
-  "homepage": "https://github.com/pmvdbijl7/matching-app#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
-    "cookies": "^0.8.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "joi": "^17.4.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.6.4",
-    "mongoose": "^5.11.15",
-    "mongoose-unique-validator": "^2.0.3",
-    "multer": "^1.4.2",
-    "sessionstorage": "^0.1.0",
-    "slug": "^4.0.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7",
-    "sass": "^1.32.7"
-  }
+	"name": "matching-app",
+	"version": "1.0.0",
+	"description": "This is a project for school in year 2, semester 2 of the Communication & Multimedia Design course at the Amsterdam University of Applied Sciences.",
+	"main": "app.js",
+	"scripts": {
+		"test": "nodemon app.js",
+		"start": "nodemon app.js",
+		"serve": "nodemon app.js",
+		"build": "",
+		"sass:compile": "sass public/scss/main.scss:public/css/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pmvdbijl7/matching-app.git"
+	},
+	"author": "Patrick van der Bijl",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/pmvdbijl7/matching-app/issues"
+	},
+	"homepage": "https://github.com/pmvdbijl7/matching-app#readme",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"body-parser": "^1.19.0",
+		"cookie-parser": "^1.4.5",
+		"cookies": "^0.8.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"express-handlebars": "^5.2.0",
+		"joi": "^17.4.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongodb": "^3.6.4",
+		"mongoose": "^5.11.15",
+		"mongoose-unique-validator": "^2.0.3",
+		"multer": "^1.4.2",
+		"sessionstorage": "^0.1.0",
+		"slug": "^4.0.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7",
+		"sass": "^1.32.7"
+	}
 }
