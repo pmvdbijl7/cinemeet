@@ -12,13 +12,21 @@
 					action="/<%= user.username %>/edit"
 					method="POST"
 					class="edit-profile"
+					enctype="multipart/form-data"
 				>
 					<div class="form-group">
 						<label for="avatar">
+							<% if(!user.avatar) { %>
 							<img
 								src="/media/images/avatar_default.jpg"
 								alt="Profile picture"
 							/>
+							<% } else { %>
+							<img
+								src="/uploads/<%= user.avatar %>"
+								alt="Profile picture"
+							/>
+							<% } %>
 						</label>
 						<input
 							type="file"

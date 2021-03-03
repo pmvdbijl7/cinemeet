@@ -1,5 +1,7 @@
 // Import Model
 const User = require('../models/User');
+const multer = require('multer');
+const path = require('path');
 
 const user_get = (req, res) => {
 	const username = req.params.username;
@@ -30,7 +32,17 @@ const user_edit_get = (req, res) => {
 };
 
 const user_edit_post = (req, res) => {
-	console.log(req.body);
+	const authUser = req.user._id;
+
+	User.findByIdAndUpdate(authUser, req.body).then(() => {
+		User.findOne({ authUser }).then((result) => {
+			console.log(result);
+		});
+	});
 };
 
-module.exports = { user_get, user_edit_get, user_edit_post };
+module.exports = {
+	user_get,
+	user_edit_get,
+	user_edit_post,
+};
