@@ -36,7 +36,8 @@ const user_edit_post = (req, res) => {
 
 	User.findByIdAndUpdate(authUser, req.body).then(() => {
 		User.findOne({ authUser }).then((result) => {
-			console.log(result);
+			backURL = req.header('Referer') || '/';
+			res.redirect(backURL);
 		});
 	});
 };

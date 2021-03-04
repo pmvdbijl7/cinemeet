@@ -11,15 +11,43 @@
 				<use xlink:href="/media/images/close.svg#close"></use>
 			</svg>
 
+			<h3>Cinemeet</h3>
+
 			<img src="/media/images/logo.png" alt="Cinemeet logo" />
 		</div>
-		<li><a href="/">Home</a></li>
-		<li><a href="/discover">Discover</a></li>
-		<li><a href="/movies">Movies</a></li>
-		<li><a href="/series">Series</a></li>
-		<li><a href="/bookmarks">Bookmarks</a></li>
-		<li><a href="/settings">Settings</a></li>
-		<li><a href="/logout">Logout</a></li>
+
+		<li>
+			<a href="/">
+				<svg>
+					<use xlink:href="/media/images/home.svg#home"></use>
+				</svg>
+				Home
+			</a>
+		</li>
+		<li>
+			<a href="/<%= user.username %>">
+				<svg>
+					<use xlink:href="/media/images/profile.svg#profile"></use>
+				</svg>
+				Profile
+			</a>
+		</li>
+		<li>
+			<a href="/settings">
+				<svg>
+					<use xlink:href="/media/images/settings.svg#settings"></use>
+				</svg>
+				Settings
+			</a>
+		</li>
+		<li>
+			<a href="/logout">
+				<svg>
+					<use xlink:href="/media/images/logout.svg#logout"></use>
+				</svg>
+				Logout
+			</a>
+		</li>
 	</ul>
 </nav>
 
@@ -29,6 +57,6 @@
 
 <a href="/<%= user.username %>">
 	<svg>
-		<use xlink:href="/media/images/profile_default.svg#profile"></use>
+		<use xlink:href="/media/images/profile.svg#profile"></use>
 	</svg>
 </a>
