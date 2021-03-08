@@ -1,12 +1,12 @@
 // Import Model
 const User = require('../models/User');
 
-const home_get = (req, res) => {
-	// Get User id
-	const id = req.user._id;
+const homeGet = (req, res) => {
+	// Get Logged In User ID
+	const authUser = req.user._id;
 
 	// Get User Data
-	User.findById(id).then((result) => {
+	User.findById(authUser).then((result) => {
 		res.render('pages/index', {
 			title: 'Home',
 			user: result.toJSON(),
@@ -14,4 +14,4 @@ const home_get = (req, res) => {
 	});
 };
 
-module.exports = { home_get };
+module.exports = { homeGet };

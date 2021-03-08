@@ -4,20 +4,13 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 require('dotenv/config');
-const verify = require('./controllers/verifyAccessToken');
+const verifyAccess = require('./controllers/verifyAccessController');
 const homeController = require('./controllers/homeController');
 
 // Get .env Variables
 const hostURL = process.env.URL;
 const hostPort = process.env.PORT || 8000;
-const dbConnection =
-	'mongodb+srv://' +
-	process.env.DB_USERNAME +
-	':' +
-	process.env.DB_PASSWORD +
-	'@gettingstarted.35frc.mongodb.net/' +
-	process.env.DB_NAME +
-	'?retryWrites=true&w=majority';
+const dbConnection = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@gettingstarted.35frc.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 // Import Routes
 const authRoutes = require('./routes/authRoutes.js');
@@ -49,7 +42,7 @@ mongoose.connect(
 );
 
 // Get Home Page
-app.get('/', verify, homeController.home_get);
+app.get('/', verifyAccess, homeController.homeGet);
 
 // Route Middlewares
 app.use(authRoutes);

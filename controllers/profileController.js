@@ -3,7 +3,8 @@ const User = require('../models/User');
 const multer = require('multer');
 const path = require('path');
 
-const user_get = (req, res) => {
+// Get User Profile Page
+const userGet = (req, res) => {
 	const username = req.params.username;
 	const authUser = req.user._id;
 
@@ -20,7 +21,8 @@ const user_get = (req, res) => {
 	});
 };
 
-const user_edit_get = (req, res) => {
+// Get User Edit Page
+const userEditGet = (req, res) => {
 	const authUser = req.user._id;
 
 	User.findById(authUser).then((result) => {
@@ -31,19 +33,19 @@ const user_edit_get = (req, res) => {
 	});
 };
 
-const user_edit_post = (req, res) => {
+// Update User
+const userUpdate = (req, res) => {
 	const authUser = req.user._id;
 
 	User.findByIdAndUpdate(authUser, req.body).then(() => {
 		User.findOne({ authUser }).then((result) => {
-			backURL = req.header('Referer') || '/';
-			res.redirect(backURL);
+			res.redirect(`/${req.params.username}`);
 		});
 	});
 };
 
 module.exports = {
-	user_get,
-	user_edit_get,
-	user_edit_post,
+	userGet,
+	userEditGet,
+	userUpdate,
 };

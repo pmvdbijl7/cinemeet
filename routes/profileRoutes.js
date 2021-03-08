@@ -1,17 +1,20 @@
 const router = require('express').Router();
-const verify = require('../controllers/verifyAccessToken');
+const verifyAccess = require('../controllers/verifyAccessController');
 
 // Import Controllers
 const profileController = require('../controllers/profileController');
 const uploadController = require('../controllers/uploadController');
 
-router.get('/:username', verify, profileController.user_get);
-router.get('/:username/edit', verify, profileController.user_edit_get);
+// User Profile Page
+router.get('/:username', verifyAccess, profileController.userGet);
+
+// User Edit Page
+router.get('/:username/edit', verifyAccess, profileController.userEditGet);
 router.post(
 	'/:username/edit',
-	verify,
+	verifyAccess,
 	uploadController.uploadProfilePicture,
-	profileController.user_edit_post
+	profileController.userUpdate
 );
 
 module.exports = router;

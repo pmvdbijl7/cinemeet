@@ -1,15 +1,19 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { registerValidation, loginValidation } = require('./validation');
+const {
+	registerValidation,
+	loginValidation,
+} = require('./validationController');
 require('dotenv/config');
 
-// Register Controllers
-const register_get = (req, res) => {
+// Get Register page
+const registerGet = (req, res) => {
 	res.render('pages/auth/register', { layout: 'auth', title: 'Sign Up' });
 };
 
-const register_post = async (req, res) => {
+// Register New User
+const registerPost = async (req, res) => {
 	// Validate Register Data
 	const { error } = registerValidation(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
@@ -44,12 +48,13 @@ const register_post = async (req, res) => {
 		});
 };
 
-// login Controllers
-const login_get = (req, res) => {
+// Get Login Page
+const loginGet = (req, res) => {
 	res.render('pages/auth/login', { layout: 'auth', title: 'Sign In' });
 };
 
-const login_post = async (req, res) => {
+// Login User
+const loginPost = async (req, res) => {
 	// Validate Login Data
 	const { error } = loginValidation(req.body);
 	if (error) return res.status(400).send(error.details[0].message);
@@ -68,7 +73,7 @@ const login_post = async (req, res) => {
 	res.redirect('/');
 };
 
-// Logout Controller
+// Logout User
 const logout = (req, res) => {
 	if (req.cookies.accessToken) {
 		res.clearCookie('accessToken');
@@ -76,4 +81,4 @@ const logout = (req, res) => {
 	}
 };
 
-module.exports = { register_get, register_post, login_get, login_post, logout };
+module.exports = { registerGet, registerPost, loginGet, loginPost, logout };

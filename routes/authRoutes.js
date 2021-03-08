@@ -2,12 +2,12 @@ const router = require('express').Router();
 const authController = require('../controllers/authController');
 
 // Register Routes
-router.get('/signup', authController.register_get);
-router.post('/signup', authController.register_post);
+router.get('/signup', authController.registerGet);
+router.post('/signup', authController.registerPost);
 
 // Login Routes
-router.get('/signin', authController.login_get);
-router.post('/signin', authController.login_post);
+router.get('/signin', authController.loginGet);
+router.post('/signin', authController.loginPost);
 
 // Logout
 router.get('/logout', authController.logout);
