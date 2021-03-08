@@ -54,8 +54,8 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 Below is an example of how the database structure looks like from the 'users' collection.
 | **NAME** | **TYPE** | **VALUE** |
 |----------|----------|-----------|
-| _id | ObjectId | \_Patrick_ |
-| username | String | _patrick.mvdb_ |
+| _id | ObjectId | *oy986d9asg698d6a69d* |
+| username | String | *patrick.mvdb*|
 | email | String | _pmvdbijl7@gmail.com_ |
 | password | String | _\*Y#)GJSo#DKGHu#G_ |
 | name | String | _Patrick_ |
