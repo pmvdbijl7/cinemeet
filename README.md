@@ -15,9 +15,7 @@ This is a project I am currently working on for school in year 2, semester 2 of 
 
 -   [Features](#features)
 -   [Usage](#usage)
-
-*   [Database Structure](#database-structure)
-
+-   [Database Structure](#database-structure)
 -   [Support](#support)
 -   [Roadmap](#roadmap)
 -   [Credits](#credits)
