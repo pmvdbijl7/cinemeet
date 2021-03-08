@@ -59,7 +59,7 @@ This project uses the following open source packages:
 + [Npm](https://www.npmjs.com/)
 + [Nodemon](https://nodemon.io/)
 + [Express](http://expressjs.com/)
-+ [Handlebars](https://handlebarsjs.com/)
++ [EJS](https://ejs.co/)
 + [Sass](https://sass-lang.com/)
 
 ## License
