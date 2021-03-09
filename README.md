@@ -83,6 +83,15 @@ This project uses the following open source packages:
 -   [Express](http://expressjs.com/)
 -   [EJS](https://ejs.co/)
 -   [Sass](https://sass-lang.com/)
+-   [Mongoose](https://mongoosejs.com/)
+-   [JWT](https://jwt.io/)
+-   [Bcrypt](https://www.npmjs.com/package/bcrypt)
+-   [Body-parser](https://www.npmjs.com/package/body-parser)
+-   [Cookie-parser](https://www.npmjs.com/package/cookie-parser)
+-   [Dotenv](https://www.npmjs.com/package/dotenv)
+-   [Joi](https://www.npmjs.com/package/joi)
+-   [Multer](https://www.npmjs.com/package/multer)
+-   [Slug](https://www.npmjs.com/package/slug)
 
 ## License
 
