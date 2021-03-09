@@ -9,7 +9,9 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/pmvdbijl7/matching-app)
 [![GitHub license](https://img.shields.io/github/license/pmvdbijl7/matching-app)](https://github.com/pmvdbijl7/matching-app/blob/main/LICENSE)
 
-This is a project I am currently working on for school in year 2, semester 2 of the Communication &amp; Multimedia Design course at the Amsterdam University of Applied Sciences.
+<img src="./public/media/images/cinemeet_banner.jpg" alt="Cinemeet Logo" />
+
+**Cinemeet** allows users to match with other users based on movies/series interests. People usually like to talk to other people about the movies and series they are watching so that they can express their opinions/feelings. The target audience Cinemeet focus on are people who watch movies and series every week.
 
 ## Table of Contents
 
