@@ -11,7 +11,7 @@
 
 <img src="./public/media/images/cinemeet_banner.jpg" alt="Cinemeet Logo" />
 
-**Cinemeet** allows users to match with other users based on movies/series interests. People usually like to talk to other people about the movies and series they are watching so that they can express their opinions/feelings. The target audience Cinemeet focus on are people who watch movies and series every week.
+**Cinemeet** allows users to match other users based on favorite genres, movies and series. They can set their own preferences on their own profile. Users can also view the profile of other users to see which favorite genres, movies and series he/she has. Besides that, users can create a personal biography on their profile to introduce themselves. People usually like to talk to other people about the movies and series they are watching so that they can express their opinions/feelings. The target audience Cinemeet focus on are people who watch movies and series every week.
 
 ## Table of Contents
 
